@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Yuxuan Ma"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "Yuxuan Ma"
 description              : &description "personal description"
@@ -44,7 +44,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "https://github.com/TrendMYX"
+  github           : "TrendMYX"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -63,7 +63,7 @@ author:
   medium           : # URL
   pinterest        : # Username
   soundcloud       : # Username
-  steam            : "TrendMYX"
+  steam            : "trendmyx"
   telegram         : # URL
   tumblr           : # Username
   twitter          : # Username for X / Twitter
