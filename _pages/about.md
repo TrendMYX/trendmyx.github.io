@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Yuxuan Ma"
+title: "Welcome"
 author_profile: true
 redirect_from: 
   - /about/
