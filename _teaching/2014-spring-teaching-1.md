@@ -1,20 +1,8 @@
 ---
-title: "Teaching experience 1"
-collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+title: "Data Structure and Algorithm Analysis(H) Student Assistant"
+collection: SA
+type: "Undergraduate Honor Course"
+# permalink: /teaching/2014-spring-teaching-1
+venue: "SUSTech, CSE department"
+date: 2024/9/1 ~ 2025/01/17
 ---
-
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
