@@ -12,7 +12,11 @@ redirect_from:
 Welcome to my personal website.
 
 ### Fun Fact:
-I've found that many people who don't speak Chinese have a hard time pronouncing my first name **'Yuxuan'** correctly, because the pronunciation of 'U' and 'X' in Chinese is distinct from English. Generally, a good English approximation for Mandarin would be **'Yoo-Shyooan'** where **'Yoo'** has a falling tone while **'Shyooan'** has a rising tone. To avoid situations where you say it but I don't realize you're talking to me, you can call me just by my English name, **Johan**, or click on this [Chinese name website](https://www.namechef.co/chinese-name/details/%E7%85%9C%E8%BB%92/) to see the correct pronounciation and fun facts about my first name.
+
+
+A lot of people who don’t speak Chinese find it tricky to pronounce my first name, **Yuxuan**, because the sounds for “U” and “X” in Chinese are perhaps different from other languages. A close English approximation would be something like **“Yoo-Shyooan”** — with “Yoo” said in a falling tone and “Shyooan” in a rising one.
+
+That said, to keep things simple, feel free to just call me **Johan** which is my English name. Or, if you’re curious, you can check out this [Chinese name website](https://www.namechef.co/chinese-name/details/%E7%85%9C%E8%BB%92/) and learn a few fun facts(pronunciation) about it!
 
 <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=dJGKnk5uhRHw9tmanzlZ0KGul1BB1bVpUsUEIATlmPg&cl=ffffff&w=a">
 </script>
