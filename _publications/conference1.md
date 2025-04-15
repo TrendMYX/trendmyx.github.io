@@ -1,7 +1,7 @@
 ---
 title: "Random Gradient Hyper-heuristics Can Learn to Escape Local Optima in Multimodal Optimisation"
 collection: publications
-category: Conference Papers
+category: conferences
 permalink: /publication/conference-1
 date: 2025-03-19
 venue: 'Conference 1'
