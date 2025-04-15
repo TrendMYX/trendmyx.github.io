@@ -16,4 +16,4 @@ We consider the **TwoRates** benchmark function which includes several consecuti
 
 The function was recently introduced to assess the performance of the *flex-EA* that uses an archive to store and re-apply the two most suitable Randomized Local Search (RLS*k*) operators to make the jumps of different lengths.
 We show that the SHH can optimise the function considerably faster by identifying and consecutively re-applying  the single  best heuristic to overcome all of the local optima. 
-This performance also holds when the set of low-level heuristics contains all the $n$ possible RLS*k* operators, where *n* is the problem size.
+This performance also holds when the set of low-level heuristics contains all the *n* possible RLS*k* operators, where *n* is the problem size.
