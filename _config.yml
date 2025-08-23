@@ -21,7 +21,7 @@ repository               : "trendmyx/trendmyx.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "spongebob.jpg"
+  avatar           : "selfie.png"
   name             : "Yuxuan Ma"
   pronouns         : # example: "she/her"  
   bio              : "B.Eng in Computer Science(Expected)"
