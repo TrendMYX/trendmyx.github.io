@@ -2,7 +2,6 @@
 title: "Data Structures and Algorithm Analysis (Honors)"
 collection: TA
 type: "Undergraduate Course TA"
-# permalink: /teaching/2014-spring-teaching-1
 venue: "CSE department"
 date: 2024/09/01 
 ---
