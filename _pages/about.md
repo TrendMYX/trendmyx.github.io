@@ -42,7 +42,7 @@ I enjoy traveling in my spare time.
   <div style="width: 50%; display: flex; flex-direction: column;">
     <img src="../images/pic4.png" 
          style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
-    <div style="text-align: center; margin-top: 3px;">Atlantic Ocean Road @ ??</div>
+    <div style="text-align: center; margin-top: 3px;">Atlantic Ocean Road @ Norway</div>
   </div>
 
   <!-- right -->
@@ -50,12 +50,12 @@ I enjoy traveling in my spare time.
     <div style="display: flex; flex-direction: column;">
       <img src="../images/pic5.png" 
            style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
-      <div style="text-align: center; margin-top: 3px;">Sognefjord @ ??</div>
+      <div style="text-align: center; margin-top: 3px;">Sognefjord @ Norway</div>
     </div>
     <div style="display: flex; flex-direction: column;">
       <img src="../images/pic6.png" 
            style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
-      <div style="text-align: center; margin-top: 3px;"> The Little Mermaid @ ??</div>
+      <div style="text-align: center; margin-top: 3px;"> The Little Mermaid @ Denmark</div>
     </div>
   </div>
 </div>
