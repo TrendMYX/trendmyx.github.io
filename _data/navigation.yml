@@ -11,7 +11,7 @@ main:
   - title: "Talks"
     url: /talks/    
 
-  - title: "SA"
+  - title: "TA"
     url: /teaching/    
     
   #- title: "Portfolio"
@@ -21,7 +21,7 @@ main:
   #   url: /year-archive/
     
   - title: "CV"
-    url: https://rxresu.me/trendmyx/yuxuan-ma-cv
+    url: /files/Yuxuan_Ma_CV.pdf
     
   #- title: "Guide"
   #  url: /markdown/
