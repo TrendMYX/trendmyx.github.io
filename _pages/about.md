@@ -11,7 +11,7 @@ redirect_from:
 
 Welcome to my personal website! I am an undergraduate student from Southern University of Science and Technology.
 
-<div style="display: flex; width: 700px; gap: 10px; margin-bottom: 16px;">
+<div style="display: flex; width: 750px; gap: 16px; margin-bottom: 16px;">
   <!-- left -->
   <div style="width: 50%; display: flex; flex-direction: column;">
     <img src="../images/pic1.jpg" 
