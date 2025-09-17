@@ -1,0 +1,134 @@
+--- # layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+<!-- Publications block -->
+<section class="pubs">
+  <style>
+    .pubs{--fg:#222;--muted:#6b7280;--line:#e5e7eb;--chip:#f8fafc;--card:#f3f4f6}
+    @media (prefers-color-scheme: dark){
+      .pubs{--fg:#e5e7eb;--muted:#9aa4b2;--line:#334155;--chip:#0b1220;--card:#111827}
+    }
+    .pubs *{box-sizing:border-box;color:var(--fg)}
+    .pubs h2{margin:26px 0 12px;font-size:22px;font-weight:700;line-height:1.2;padding-left:12px;border-left:4px solid var(--muted)}
+    .pubs hr{border:0;border-top:1px solid var(--line);margin:8px 0 14px}
+    .pubs ul{list-style:disc;margin:0;padding-left:1.2rem}
+    .pubs li{margin:0 0 12px;position:relative}
+    .pubs .card{
+      margin:6px 0 18px 0; padding:12px 14px 10px 14px;
+      background:var(--card); border:1px solid var(--line); border-radius:10px;
+    }
+    .pubs .title{margin:0;font-weight:800}
+    .pubs .title a[href]{text-decoration:none}
+    .pubs .taglike{font-size:90%; text-decoration:none; border-bottom:1px dotted currentColor}
+    .pubs .authors{margin-top:4px}
+    .pubs .authors a{color:inherit; text-decoration:underline}
+    .pubs .venue{margin-top:4px; color:var(--muted); font-style:italic}
+  </style>
+
+  <!-- Conference Papers -->
+  <h2>Conference Papers</h2>
+  <hr>
+  <div class="card">
+    <ul>
+      <li>
+        <p class="title"><strong>Random Gradient Hyper-heuristics Can Learn to Escape Local Optima in Multimodal Optimisation</strong>
+          &nbsp;<a class="taglike" href="https://dl.acm.org/doi/10.1145/3712256.3726406" target="_blank" rel="noopener">[link]</a>
+        </p>
+        <p class="authors">
+          Yuxuan Ma,
+          <a href="https://peteroliveto.github.io/" target="_blank" rel="noopener">Pietro S. Oliveto</a>,
+          <a href="https://sop.ior.kit.edu/english/21_297.php" target="_blank" rel="noopener">John Alasdair Warwicker</a>
+        </p>
+        <p class="venue">
+          GECCO 2025
+          <a href="https://gecco-2025.sigevo.org/Accepted-Papers#&sort[wptrackerlist23-1]=0-1" target="_blank" rel="noopener"><em>Theory track</em></a>
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Manuscripts / In Submission -->
+  <h2>Manuscripts / In Submission</h2>
+  <hr>
+  <div class="card">
+    <ul>
+      <li>
+        <p class="title"><strong>On the Effectiveness of Random Gradient Hyper-heuristics for Multimodal Optimisation</strong>
+          &nbsp;<a class="taglike" href="files/HHTwoRatesJournal.pdf" target="_blank" rel="noopener">[pdf]</a>
+        </p>
+        <p class="authors">
+          Yuxuan Ma,
+          <a href="https://peteroliveto.github.io/" target="_blank" rel="noopener">Pietro S. Oliveto</a>,
+          <a href="https://sop.ior.kit.edu/english/21_297.php" target="_blank" rel="noopener">John Alasdair Warwicker</a>
+        </p>
+        <p>Extended version of the conference paper</p>
+        <p class="venue">Submitted to <em>Artificial Intelligence</em> journal</p>
+      </li>
+
+      <li>
+        <p class="title"><strong>Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms</strong></p>
+        <p class="authors">
+          Yuxuan Ma,
+          <a href="https://valentinosantucci.github.io/" target="_blank" rel="noopener">Valentino Santucci</a>,
+          <a href="https://www.imm.dtu.dk/~cawi/" target="_blank" rel="noopener">Carsten Witt</a>
+        </p>
+        <p class="venue">Under double-blind review at a major AI conference</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- 
+## Conference Papers
+
+>- **Random Gradient Hyper-heuristics Can Learn to Escape Local Optima in Multimodal Optimisation** \[[link](https://dl.acm.org/doi/10.1145/3712256.3726406)\]<br>
+  Yuxuan Ma, [Pietro S. Oliveto](https://peteroliveto.github.io/), [John Alasdair Warwicker](https://sop.ior.kit.edu/english/21_297.php)<br>
+  *GECCO 2025 [Theory track](https://gecco-2025.sigevo.org/Accepted-Papers#&sort[wptrackerlist23-1]=0-1)*
+
+
+## Manuscripts / In Submission
+
+>- **On the Effectiveness of Random Gradient Hyper-heuristics for Multimodal Optimisation** \[[pdf](files/HHTwoRatesJournal.pdf)\]<br>
+  Yuxuan Ma, [Pietro S. Oliveto](https://peteroliveto.github.io/), [John Alasdair Warwicker](https://sop.ior.kit.edu/english/21_297.php)<br>
+  Extended version of the conference paper<br>
+  Submitted to *Artificial Intelligence* journal
+  
+>- **Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms**<br>
+  Yuxuan Ma, [Valentino Santucci](https://valentinosantucci.github.io/), [Carsten Witt](https://www.imm.dtu.dk/~cawi/)<br>
+  Under double-blind review at a major AI conference -->
+
+
+<!-- {% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% endif %}
+
+{% include base_path %}
+
+
+{% if site.publication_category %}
+  {% for category in site.publication_category  %}
+    {% assign title_shown = false %}
+    {% for post in site.publications reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
+
+
+
