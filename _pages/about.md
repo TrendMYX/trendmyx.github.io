@@ -36,8 +36,29 @@ Welcome to my personal website! I am an undergraduate student from Southern Univ
 
 
 
-I love travelling.
+I enjoy traveling in my spare time.
+<div style="display: flex; width: 750px; gap: 16px; margin-bottom: 16px;">
+  <!-- left -->
+  <div style="width: 50%; display: flex; flex-direction: column;">
+    <img src="../images/pic4.png" 
+         style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+    <div style="text-align: center; margin-top: 3px;">Atlantic Ocean Road @ ??</div>
+  </div>
 
+  <!-- right -->
+  <div style="width: 50%; display: flex; flex-direction: column; gap: 3px;">
+    <div style="display: flex; flex-direction: column;">
+      <img src="../images/pic5.png" 
+           style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+      <div style="text-align: center; margin-top: 3px;">Sognefjord @ ??</div>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <img src="../images/pic6.png" 
+           style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px;">
+      <div style="text-align: center; margin-top: 3px;"> The Little Mermaid @ ??</div>
+    </div>
+  </div>
+</div>
 
 <div style="width:1px;height:1px;overflow:hidden;">
   <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=70&t=n&d=dJGKnk5uhRHw9tmanzlZ0KGul1BB1bVpUsUEIATlmPg'></script>
