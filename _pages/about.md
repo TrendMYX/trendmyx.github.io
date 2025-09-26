@@ -60,9 +60,5 @@ I enjoy traveling in my spare time.
   </div>
 </div>
 
-<div style="width:1px;height:1px;overflow:hidden;">
-  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=70&t=n&d=dJGKnk5uhRHw9tmanzlZ0KGul1BB1bVpUsUEIATlmPg'></script>
-</div>
-
 
 
