@@ -1,0 +1,708 @@
+---
+layout: single
+title: "Visual"
+permalink: /visual/
+author_profile: false
+---
+
+{% include base_path %}
+
+{% assign works = site.data.visual_works | sort: "order" %}
+{% assign featured = works.first %}
+{% assign photo_works = works | where: "type", "photo" %}
+{% assign video_works = works | where: "type", "video" %}
+
+<style>
+  :root{
+    --visual-bg: #0b0b0c;
+    --visual-panel: #111214;
+    --visual-card: #151618;
+    --visual-line: rgba(255,255,255,0.10);
+    --visual-line-soft: rgba(255,255,255,0.06);
+    --visual-text: #f5f3ee;
+    --visual-text-soft: rgba(245,243,238,0.72);
+    --visual-text-dim: rgba(245,243,238,0.52);
+    --visual-paper: #f4f1eb;
+    --visual-paper-2: #ece7df;
+    --visual-ink: #151515;
+    --visual-ink-soft: rgba(21,21,21,0.68);
+    --visual-shadow: 0 24px 80px rgba(0,0,0,0.24);
+    --visual-radius-xl: 34px;
+    --visual-radius-lg: 26px;
+    --visual-radius-md: 20px;
+    --visual-radius-sm: 14px;
+  }
+
+  .visual-shell{
+    width:min(1480px, calc(100vw - 2rem));
+    margin-left:50%;
+    transform:translateX(-50%);
+  }
+
+  .visual-page{
+    margin-top:-0.5rem;
+    color:var(--visual-text);
+  }
+
+  .visual-hero{
+    position:relative;
+    overflow:hidden;
+    min-height:72vh;
+    display:flex;
+    align-items:flex-end;
+    border-radius:var(--visual-radius-xl);
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.30) 48%, rgba(0,0,0,0.74) 100%),
+      url('{{ featured.cover | relative_url }}') center center / cover no-repeat,
+      linear-gradient(135deg, #0f1012 0%, #17181b 100%);
+    box-shadow:var(--visual-shadow);
+  }
+
+  .visual-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.16) 38%, rgba(0,0,0,0.04) 100%);
+    pointer-events:none;
+  }
+
+  .visual-hero-inner{
+    position:relative;
+    z-index:2;
+    width:100%;
+    padding:clamp(1.5rem, 3vw, 2.4rem);
+    display:grid;
+    grid-template-columns:minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap:2rem;
+    align-items:end;
+  }
+
+  .visual-kicker{
+    margin:0 0 .9rem 0;
+    font-size:.78rem;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.66);
+  }
+
+  .visual-title{
+    margin:0;
+    font-size:clamp(2.8rem, 7vw, 6.2rem);
+    line-height:.92;
+    letter-spacing:-.045em;
+    max-width:7.8ch;
+  }
+
+  .visual-lead{
+    margin:1rem 0 0 0;
+    max-width:54ch;
+    font-size:1.02rem;
+    line-height:1.9;
+    color:var(--visual-text-soft);
+  }
+
+  .visual-hero-side{
+    justify-self:end;
+    width:min(100%, 420px);
+    padding:1.05rem 1.1rem 1rem;
+    border-radius:24px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.10);
+    backdrop-filter:blur(18px);
+  }
+
+  .visual-hero-side-label{
+    margin:0 0 .55rem 0;
+    color:rgba(255,255,255,0.58);
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+
+  .visual-hero-side-title{
+    margin:0;
+    font-size:1.18rem;
+    line-height:1.15;
+  }
+
+  .visual-hero-side-meta{
+    margin:.45rem 0 0 0;
+    color:rgba(255,255,255,0.72);
+    font-size:.95rem;
+    line-height:1.6;
+  }
+
+  .visual-hero-side-desc{
+    margin:.75rem 0 0 0;
+    color:rgba(255,255,255,0.72);
+    font-size:.94rem;
+    line-height:1.7;
+  }
+
+  .visual-section{
+    margin-top:1.15rem;
+    border-radius:var(--visual-radius-xl);
+    overflow:hidden;
+    background:linear-gradient(180deg, var(--visual-paper) 0%, #f8f6f1 100%);
+    color:var(--visual-ink);
+    box-shadow:0 18px 60px rgba(15,15,15,0.08);
+    border:1px solid rgba(17,17,17,0.04);
+  }
+
+  .visual-section-top{
+    padding:1.25rem 1.25rem 1rem 1.25rem;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+
+  .visual-section-title{
+    margin:0;
+    font-size:1.6rem;
+    letter-spacing:-.03em;
+  }
+
+  .visual-section-copy{
+    margin:.3rem 0 0 0;
+    color:var(--visual-ink-soft);
+    line-height:1.75;
+    font-size:.97rem;
+  }
+
+  .visual-filters{
+    display:flex;
+    gap:.55rem;
+    flex-wrap:wrap;
+  }
+
+  .visual-filter{
+    appearance:none;
+    border:none;
+    background:transparent;
+    color:rgba(21,21,21,0.56);
+    border-radius:999px;
+    padding:.55rem .9rem;
+    cursor:pointer;
+    font-size:.93rem;
+    transition:all .22s ease;
+    border:1px solid rgba(21,21,21,0.08);
+  }
+
+  .visual-filter:hover{
+    color:#111;
+    border-color:rgba(21,21,21,0.18);
+    background:rgba(255,255,255,0.55);
+  }
+
+  .visual-filter.is-active{
+    color:#fff;
+    background:#111;
+    border-color:#111;
+  }
+
+  .visual-grid{
+    padding:0 1.25rem 1.25rem 1.25rem;
+    display:grid;
+    grid-template-columns:repeat(12, minmax(0, 1fr));
+    gap:1rem;
+  }
+
+  .visual-card{
+    display:flex;
+    flex-direction:column;
+    text-decoration:none !important;
+    color:inherit !important;
+    grid-column:span 4;
+    transition:transform .28s ease, opacity .22s ease;
+  }
+
+  .visual-card.standard{ grid-column:span 4; }
+  .visual-card.wide{ grid-column:span 8; }
+  .visual-card.tall{ grid-column:span 4; }
+  .visual-card.feature{ grid-column:span 12; }
+
+  .visual-card.is-hidden{
+    display:none;
+  }
+
+  .visual-card:hover{
+    transform:translateY(-3px);
+  }
+
+  .visual-card-frame{
+    position:relative;
+    overflow:hidden;
+    border-radius:var(--visual-radius-lg);
+    background:#d9d4cc;
+    border:1px solid rgba(17,17,17,0.06);
+    box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .visual-card.standard .visual-card-frame{ aspect-ratio: 4 / 5; }
+  .visual-card.wide .visual-card-frame{ aspect-ratio: 16 / 9; }
+  .visual-card.tall .visual-card-frame{ aspect-ratio: 3 / 5; }
+  .visual-card.feature .visual-card-frame{ aspect-ratio: 21 / 9; }
+
+  .visual-card-frame img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    transition:transform .7s ease;
+  }
+
+  .visual-card:hover .visual-card-frame img{
+    transform:scale(1.035);
+  }
+
+  .visual-card-badge{
+    position:absolute;
+    top:.85rem;
+    left:.85rem;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    gap:.45rem;
+    padding:.4rem .7rem;
+    border-radius:999px;
+    background:rgba(17,17,17,0.58);
+    color:#fff;
+    font-size:.78rem;
+    letter-spacing:.04em;
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+  }
+
+  .visual-card-play{
+    position:absolute;
+    right:.85rem;
+    bottom:.85rem;
+    z-index:2;
+    width:2.5rem;
+    height:2.5rem;
+    display:grid;
+    place-items:center;
+    border-radius:999px;
+    background:rgba(255,255,255,0.86);
+    color:#111;
+    font-size:.9rem;
+    border:1px solid rgba(17,17,17,0.08);
+    box-shadow:0 6px 18px rgba(0,0,0,0.10);
+  }
+
+  .visual-card-text{
+    padding:.88rem .2rem .1rem .2rem;
+  }
+
+  .visual-card-meta{
+    margin:0;
+    font-size:.82rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(21,21,21,0.48);
+  }
+
+  .visual-card-title{
+    margin:.42rem 0 0 0;
+    font-size:1.08rem;
+    line-height:1.2;
+    letter-spacing:-.02em;
+  }
+
+  .visual-card-desc{
+    margin:.45rem 0 0 0;
+    color:rgba(21,21,21,0.66);
+    font-size:.94rem;
+    line-height:1.72;
+  }
+
+  .visual-note{
+    padding:0 1.25rem 1.15rem 1.25rem;
+    color:rgba(21,21,21,0.52);
+    font-size:.9rem;
+  }
+
+  .visual-modal{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:none;
+  }
+
+  .visual-modal.is-open{
+    display:block;
+  }
+
+  .visual-modal-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(10,10,11,0.82);
+    backdrop-filter:blur(14px);
+  }
+
+  .visual-modal-dialog{
+    position:relative;
+    width:min(1240px, calc(100vw - 2rem));
+    margin:4vh auto 0 auto;
+    overflow:hidden;
+    border-radius:30px;
+    background:#0d0d0e;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 30px 120px rgba(0,0,0,0.42);
+  }
+
+  .visual-modal-close{
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    z-index:4;
+    width:2.8rem;
+    height:2.8rem;
+    border:none;
+    border-radius:999px;
+    background:rgba(255,255,255,0.10);
+    color:#fff;
+    cursor:pointer;
+    font-size:1.06rem;
+    backdrop-filter:blur(10px);
+  }
+
+  .visual-modal-media{
+    background:#090909;
+  }
+
+  .visual-modal-media img,
+  .visual-modal-media video,
+  .visual-modal-media iframe{
+    display:block;
+    width:100%;
+  }
+
+  .visual-modal-media img,
+  .visual-modal-media video{
+    max-height:78vh;
+    object-fit:contain;
+    background:#090909;
+  }
+
+  .visual-modal-embed{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+  }
+
+  .visual-modal-embed iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+  }
+
+  .visual-modal-caption{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) minmax(280px, 430px);
+    gap:1.2rem;
+    padding:1rem 1.15rem 1.1rem 1.15rem;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:#f5f3ee;
+  }
+
+  .visual-modal-kicker{
+    margin:0;
+    font-size:.82rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(245,243,238,0.52);
+  }
+
+  .visual-modal-title{
+    margin:.4rem 0 0 0;
+    font-size:1.18rem;
+    line-height:1.2;
+  }
+
+  .visual-modal-description{
+    margin:0;
+    color:rgba(245,243,238,0.72);
+    line-height:1.8;
+    font-size:.95rem;
+  }
+
+  @media (max-width: 1100px){
+    .visual-hero-inner{
+      grid-template-columns:1fr;
+      align-items:end;
+    }
+
+    .visual-hero-side{
+      justify-self:start;
+      width:min(100%, 520px);
+    }
+
+    .visual-card.standard,
+    .visual-card.tall{
+      grid-column:span 6;
+    }
+
+    .visual-card.wide{
+      grid-column:span 6;
+    }
+
+    .visual-card.feature{
+      grid-column:span 12;
+    }
+
+    .visual-modal-caption{
+      grid-template-columns:1fr;
+    }
+  }
+
+  @media (max-width: 760px){
+    .visual-shell{
+      width:calc(100vw - 1rem);
+    }
+
+    .visual-hero{
+      min-height:62vh;
+    }
+
+    .visual-title{
+      max-width:none;
+    }
+
+    .visual-grid{
+      grid-template-columns:1fr;
+    }
+
+    .visual-card.standard,
+    .visual-card.tall,
+    .visual-card.wide,
+    .visual-card.feature{
+      grid-column:span 1;
+    }
+
+    .visual-card.standard .visual-card-frame,
+    .visual-card.tall .visual-card-frame,
+    .visual-card.wide .visual-card-frame,
+    .visual-card.feature .visual-card-frame{
+      aspect-ratio:4 / 5;
+    }
+
+    .visual-modal-dialog{
+      width:calc(100vw - 1rem);
+      margin:6vh auto 0 auto;
+    }
+
+    .visual-section-top{
+      padding:1rem 1rem .9rem 1rem;
+    }
+
+    .visual-grid{
+      padding:0 1rem 1rem 1rem;
+    }
+
+    .visual-note{
+      padding:0 1rem 1rem 1rem;
+    }
+  }
+</style>
+
+<div class="visual-page">
+  <section class="visual-shell visual-hero">
+    <div class="visual-hero-inner">
+      <div>
+        <p class="visual-kicker">Photography ， Timelapse ， Atmosphere</p>
+        <h1 class="visual-title">Visual Archive</h1>
+        <p class="visual-lead">
+          A quieter, more cinematic space for selected photographs and motion work.
+          I wanted this page to feel distinct from the academic part of the site:
+          slower, more visual, and more editorial.
+        </p>
+      </div>
+
+      {% if featured %}
+      <aside class="visual-hero-side">
+        <p class="visual-hero-side-label">Featured Work</p>
+        <h2 class="visual-hero-side-title">{{ featured.title }}</h2>
+        <p class="visual-hero-side-meta">
+          {{ featured.location }}{% if featured.year %} ， {{ featured.year }}{% endif %}
+        </p>
+        {% if featured.description %}
+        <p class="visual-hero-side-desc">{{ featured.description }}</p>
+        {% endif %}
+      </aside>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="visual-shell visual-section">
+    <div class="visual-section-top">
+      <div>
+        <h2 class="visual-section-title">Selected Works</h2>
+        <p class="visual-section-copy">
+          A curated selection rather than a complete archive.
+        </p>
+      </div>
+
+      <div class="visual-filters" aria-label="Filter works">
+        <button class="visual-filter is-active" type="button" data-filter="all">All</button>
+        <button class="visual-filter" type="button" data-filter="photo">Photos</button>
+        <button class="visual-filter" type="button" data-filter="video">Videos</button>
+      </div>
+    </div>
+
+    <div class="visual-grid" id="visual-grid">
+      {% for item in works %}
+        {% if item.video_embed %}
+          {% assign modal_source = "embed" %}
+          {% assign target_src = item.video_embed %}
+        {% elsif item.video_file %}
+          {% assign modal_source = "video" %}
+          {% assign target_src = item.video_file | relative_url %}
+        {% else %}
+          {% assign modal_source = "image" %}
+          {% assign target_src = item.cover | relative_url %}
+        {% endif %}
+
+        <a
+          class="visual-card {{ item.span | default: 'standard' }}"
+          href="{{ target_src }}"
+          target="_blank"
+          rel="noopener"
+          data-filter-item="{{ item.type }}"
+          data-source="{{ modal_source }}"
+          data-lightbox-src="{{ target_src }}"
+          data-poster="{{ item.cover | relative_url }}"
+          data-title="{{ item.title | escape }}"
+          data-meta="{{ item.location | escape }}{% if item.year %} ， {{ item.year }}{% endif %}"
+          data-description="{{ item.description | escape }}"
+        >
+          <div class="visual-card-frame">
+            <div class="visual-card-badge">
+              {% if item.type == "video" %}Video{% else %}Photo{% endif %}
+            </div>
+
+            {% if item.type == "video" %}
+            <div class="visual-card-play" aria-hidden="true">?</div>
+            {% endif %}
+
+            <img src="{{ item.cover | relative_url }}" alt="{{ item.title }}">
+          </div>
+
+          <div class="visual-card-text">
+            <p class="visual-card-meta">
+              {{ item.location }}{% if item.year %} ， {{ item.year }}{% endif %}
+            </p>
+            <h3 class="visual-card-title">{{ item.title }}</h3>
+            {% if item.description %}
+            <p class="visual-card-desc">{{ item.description }}</p>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="visual-note">
+      Click any work to open the full image or play the video.
+    </div>
+  </section>
+</div>
+
+<div class="visual-modal" id="visual-modal" aria-hidden="true">
+  <div class="visual-modal-backdrop" data-close="true"></div>
+  <div class="visual-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="visual-modal-title">
+    <button class="visual-modal-close" id="visual-modal-close" type="button" aria-label="Close">?</button>
+    <div class="visual-modal-media" id="visual-modal-media"></div>
+    <div class="visual-modal-caption">
+      <div>
+        <p class="visual-modal-kicker" id="visual-modal-meta"></p>
+        <h3 class="visual-modal-title" id="visual-modal-title"></h3>
+      </div>
+      <p class="visual-modal-description" id="visual-modal-description"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const filters = document.querySelectorAll(".visual-filter");
+  const cards = document.querySelectorAll(".visual-card");
+  const modal = document.getElementById("visual-modal");
+  const modalMedia = document.getElementById("visual-modal-media");
+  const modalTitle = document.getElementById("visual-modal-title");
+  const modalMeta = document.getElementById("visual-modal-meta");
+  const modalDescription = document.getElementById("visual-modal-description");
+  const modalClose = document.getElementById("visual-modal-close");
+
+  filters.forEach((button) => {
+    button.addEventListener("click", function () {
+      const filter = this.dataset.filter;
+
+      filters.forEach((btn) => btn.classList.remove("is-active"));
+      this.classList.add("is-active");
+
+      cards.forEach((card) => {
+        const type = card.dataset.filterItem;
+        const show = filter === "all" || type === filter;
+        card.classList.toggle("is-hidden", !show);
+      });
+    });
+  });
+
+  function openModal(card) {
+    const src = card.dataset.lightboxSrc;
+    const source = card.dataset.source;
+    const poster = card.dataset.poster;
+    const title = card.dataset.title || "";
+    const meta = card.dataset.meta || "";
+    const description = card.dataset.description || "";
+
+    modalTitle.textContent = title;
+    modalMeta.textContent = meta;
+    modalDescription.textContent = description;
+
+    if (source === "image") {
+      modalMedia.innerHTML = '<img src="' + src + '" alt="' + title.replace(/"/g, '&quot;') + '">';
+    } else if (source === "video") {
+      modalMedia.innerHTML = '<video controls autoplay playsinline poster="' + poster + '"><source src="' + src + '" type="video/mp4"></video>';
+    } else {
+      modalMedia.innerHTML =
+        '<div class="visual-modal-embed"><iframe src="' + src + '" title="' + title.replace(/"/g, '&quot;') + '" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>';
+    }
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    modalMedia.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener("click", function (event) {
+      event.preventDefault();
+      openModal(card);
+    });
+  });
+
+  modalClose.addEventListener("click", closeModal);
+  modal.addEventListener("click", function (event) {
+    if (event.target.dataset.close === "true" || event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+});
+</script>

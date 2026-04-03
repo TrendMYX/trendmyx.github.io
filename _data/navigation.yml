@@ -22,6 +22,10 @@ main:
     
   - title: "CV"
     url: /files/Yuxuan_Ma_CV.pdf
+
+  - title: "Visual Works"
+    url: /visual/
+
     
   #- title: "Guide"
   #  url: /markdown/

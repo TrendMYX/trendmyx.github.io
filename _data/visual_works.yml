@@ -1,0 +1,55 @@
+- order: 1
+  title: "Morning Snow Ridge"
+  type: "photo"
+  year: "2026"
+  location: "Western China"
+  cover: "/images/visual/morning-snow-ridge.jpg"
+  span: "feature"
+  description: "Soft morning light, distant ridges, and layered winter atmosphere."
+
+- order: 2
+  title: "Cloud Flow"
+  type: "video"
+  year: "2026"
+  location: "Mountain Pass"
+  cover: "/images/visual/cloud-flow-cover.jpg"
+  video_file: "/files/visual/cloud-flow.mp4"
+  span: "wide"
+  description: "A short timelapse study of shifting clouds and changing light."
+
+- order: 3
+  title: "Silent Peak"
+  type: "photo"
+  year: "2025"
+  location: "Tibet"
+  cover: "/images/visual/silent-peak.jpg"
+  span: "tall"
+  description: "A minimalist frame focused on scale, silence, and distance."
+
+- order: 4
+  title: "Blue Ice"
+  type: "photo"
+  year: "2025"
+  location: "Glacier Valley"
+  cover: "/images/visual/blue-ice.jpg"
+  span: "standard"
+  description: "Cold-toned textures and quiet geometry in alpine terrain."
+
+- order: 5
+  title: "Storm Edge"
+  type: "video"
+  year: "2025"
+  location: "Highland Plateau"
+  cover: "/images/visual/storm-edge-cover.jpg"
+  video_embed: "https://www.youtube.com/embed/REPLACE_WITH_YOUR_VIDEO_ID"
+  span: "standard"
+  description: "Fast-moving weather patterns over a darkening horizon."
+
+- order: 6
+  title: "Last Light on the Ridge"
+  type: "photo"
+  year: "2024"
+  location: "Yunnan"
+  cover: "/images/visual/last-light-ridge.jpg"
+  span: "wide"
+  description: "Warm edge light meeting cool mountain shadows at dusk."
