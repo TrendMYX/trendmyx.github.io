@@ -514,7 +514,7 @@ author_profile: false
   <section class="visual-shell visual-hero">
     <div class="visual-hero-inner">
       <div>
-        <p class="visual-kicker">Photography ， Timelapse ， Atmosphere</p>
+        <p class="visual-kicker">Photography | Timelapse | Atmosphere</p>
         <h1 class="visual-title">Visual Archive</h1>
         <p class="visual-lead">
           A quieter, more cinematic space for selected photographs and motion work.
@@ -528,7 +528,7 @@ author_profile: false
         <p class="visual-hero-side-label">Featured Work</p>
         <h2 class="visual-hero-side-title">{{ featured.title }}</h2>
         <p class="visual-hero-side-meta">
-          {{ featured.location }}{% if featured.year %} ， {{ featured.year }}{% endif %}
+          {{ featured.location }}{% if featured.year %} | {{ featured.year }}{% endif %}
         </p>
         {% if featured.description %}
         <p class="visual-hero-side-desc">{{ featured.description }}</p>
@@ -577,7 +577,7 @@ author_profile: false
           data-lightbox-src="{{ target_src }}"
           data-poster="{{ item.cover | relative_url }}"
           data-title="{{ item.title | escape }}"
-          data-meta="{{ item.location | escape }}{% if item.year %} ， {{ item.year }}{% endif %}"
+          data-meta="{{ item.location | escape }}{% if item.year %} | {{ item.year }}{% endif %}"
           data-description="{{ item.description | escape }}"
         >
           <div class="visual-card-frame">
@@ -586,7 +586,7 @@ author_profile: false
             </div>
 
             {% if item.type == "video" %}
-            <div class="visual-card-play" aria-hidden="true">?</div>
+            <div class="visual-card-play" aria-hidden="true">Play</div>
             {% endif %}
 
             <img src="{{ item.cover | relative_url }}" alt="{{ item.title }}">
@@ -594,7 +594,7 @@ author_profile: false
 
           <div class="visual-card-text">
             <p class="visual-card-meta">
-              {{ item.location }}{% if item.year %} ， {{ item.year }}{% endif %}
+              {{ item.location }}{% if item.year %} | {{ item.year }}{% endif %}
             </p>
             <h3 class="visual-card-title">{{ item.title }}</h3>
             {% if item.description %}
@@ -614,7 +614,7 @@ author_profile: false
 <div class="visual-modal" id="visual-modal" aria-hidden="true">
   <div class="visual-modal-backdrop" data-close="true"></div>
   <div class="visual-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="visual-modal-title">
-    <button class="visual-modal-close" id="visual-modal-close" type="button" aria-label="Close">?</button>
+    <button class="visual-modal-close" id="visual-modal-close" type="button" aria-label="Close">X</button>
     <div class="visual-modal-media" id="visual-modal-media"></div>
     <div class="visual-modal-caption">
       <div>
