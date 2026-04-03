@@ -8,8 +8,8 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Presentations"
-    url: /talks/    
+  # - title: "Presentations"
+  #   url: /talks/    
 
   # - title: "TA"
   #   url: /teaching/    
@@ -23,8 +23,8 @@ main:
   - title: "CV"
     url: /files/Yuxuan_Ma_CV.pdf
 
-  - title: "Visual Works"
-    url: /visual/
+  - title: "Photos"
+    url: https://pixabay.com/users/u_6b3pszvyzq-55289571/
 
     
   #- title: "Guide"
