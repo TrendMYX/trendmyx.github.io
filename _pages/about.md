@@ -9,7 +9,7 @@ redirect_from:
 
 
 
-Welcome to my personal website! I am an undergraduate student from Southern University of Science and Technology.
+Welcome to my personal website!
 
 <!--
 <div style="display: flex; width: 750px; gap: 16px; margin-bottom: 16px;">
